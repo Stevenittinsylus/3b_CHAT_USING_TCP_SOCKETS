@@ -10,30 +10,32 @@ To write a python program for creating Chat using TCP Sockets Links.
 ## PROGRAM
 client :
 ```
-import socket 
-s=socket.socket() 
-s.connect(('localhost',8000)) 
-while True: 
-    msg=input("Client > ") 
-    s.send(msg.encode()) 
+import socket
+s=socket.socket()
+s.connect(('localhost',8000))
+while True:
+    msg=input("Client > ")
+    s.send(msg.encode())
     print("Server > ",s.recv(1024).decode())
 ```
 server :
 ```
-import socket 
-s=socket.socket() 
-s.bind(('localhost',8000)) 
-s.listen(5) 
-c,addr=s.accept() 
-while True: 
-            ClientMessage=c.recv(1024).decode() 
-            print("Client > ",ClientMessage) 
-            msg=input("Server > ") 
-            c.send(msg.encode())
+import socket
+s=socket.socket()
+s.bind(('localhost',8000))
+s.listen(5)
+c,addr=s.accept()
+while True:
+    ClientMessage=c.recv(1024).decode()
+    print("Client > ",ClientMessage)
+    msg=input("Server > ")
+    c.send(msg.encode())
+
 
 ```
 ## OUPUT
-<img width="987" height="198" alt="image" src="https://github.com/user-attachments/assets/b8b3a058-ed1d-4a6c-8119-a5cf697d9852" />
+<img width="1540" height="895" alt="image" src="https://github.com/user-attachments/assets/5f987506-3b99-4343-bddf-b7856ce5d5a4" />
+
 
 ## RESULT
 Thus, the python program for creating Chat using TCP Sockets Links was successfully 
